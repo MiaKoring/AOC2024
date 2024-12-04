@@ -31,3 +31,15 @@ func main(_ input: String, isFirst: Bool = true) {
 func firstMain(_ input: String) -> Int {
     return input.matches(of: /mul\((\d{1,3},\d{1,3})\)/).map { $0.output.1.split(separator: ",").map {String($0)}.compactMap {Int($0)}.reduce(1, {$0 * $1})}.reduce(0, {$0 + $1})
 }
+
+
+func test() {
+    let text = "do()\(input.replacingOccurrences(of: "\n", with: ""))don't()"
+    let matches = text.matches(of: /do\(\)(.*?)don't\(\)/)
+    var total = 0
+    for match in matches {
+        total += firstMain("\(match.output.1)")
+    }
+    print(total)
+}
+test()
