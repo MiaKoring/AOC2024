@@ -108,4 +108,6 @@ func count(_ parsed: [[String]]) -> (Set<Position>, Bool) {
     return (visited, false)
 }
 
-main(input: input, isFirst: false)
+let time = DispatchTime.now().uptimeNanoseconds
+main(input: input, isFirst: true)
+print(Double(DispatchTime.now().uptimeNanoseconds - time) / 1000000000)
