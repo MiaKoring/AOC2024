@@ -31,7 +31,6 @@ func parse(input: String) -> [[String]] {
 
 func main(input: String, isFirst: Bool = true) {
     let parsed = parse(input: input)
-    let uniqueChars = Set(input.replacingOccurrences(of: "\n", with: "").map{String($0)})
     
     var positions = [String: [Coords]]()
     
