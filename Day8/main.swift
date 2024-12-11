@@ -22,20 +22,6 @@ let sample = """
 ............
 """
 
-let antinodeMap = """
-......#....#
-...#....0...
-....#0....#.
-..#....0....
-....0....#..
-.#....A.....
-...#........
-#......#....
-........A...
-.........A..
-..........#.
-..........#.
-"""
 
 func parse(input: String) -> [[String]] {
     input.split(separator: "\n").map { line in
@@ -58,16 +44,6 @@ func main(input: String, isFirst: Bool = true) {
             } else {
                 positions[char] = [Coords(x: x, y: y)]
             }
-        }
-    }
-    
-    var antinodePositions = [Coords]()
-    let antinodeParsed = parse(input: antinodeMap)
-    for y in 0..<antinodeParsed.count {
-        for x in 0..<antinodeParsed[0].count {
-            let char = antinodeParsed[y][x]
-            if char != "#" { continue }
-            antinodePositions.append(Coords(x: x, y: y))
         }
     }
     
